@@ -26,15 +26,46 @@
         }
         .reveal h2 {
             font-size: 30pt;
+            margin-bottom: 2em;
         }
         .reveal h5 {
             font-size: 20pt;
+            color: #666666;
+            margin-bottom: 0;
         }
         </style>
 		<div class="reveal">
 			<div class="slides">
 				<section>What's new in GCHP 13</section>
-                <section>Slide 2</section>
+                <section>    
+                    <h2>New in GCHP 13</h2>
+                    
+                    <div class="container" style="font-size: 16pt; line-height: 1.6;">
+                        <div class="col" align="left">
+                            <h6 style="margin-bottom: 0.1em;">Of interest to the group</h6>
+                            <ul style="line-height: 2;">
+                                <li>Erin's CEDS_GBD-MAPS enabled by default</li>
+                                <li>GCHP satellite overpass diagnostics</li>
+                                <li>GCHP stretched-grids</li>
+                                <li>GCPy is a utility</li>
+                                <li>"Always-up-to-date" containers</li>
+                            </ul>
+                        </div>
+                        <div class="col"  align="left">
+                            <h6 style="margin-bottom: 0.1em;">Other noteworthy features</h6>
+                            <ul>
+                                <li>Improved build system</li>
+                                <li>Unit Tester is retired</li>
+                                <li>Updated versioning scheme</li>
+                            </ul>
+                            <h6 style="margin-bottom: 0.1em; margin-top: 1em;">Release info</h6>
+                            <ul>
+                                <li>Ready to be use: 13.0.0-beta.1</li>
+                                <li>Official release: ~January 2021</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
                 <section data-transition="slide-in none-out">
                     <h5>New in GCHP 13</h5>
                     <h2>Satellite diagnostics</h2>
@@ -59,12 +90,13 @@
                 <section data-transition="slide-in">
                     <h5>New in GCHP 13</h5>
                     <h2>Satellite diagnostics</h2>
-                    <div class="container">
+                    <div class="container" style="font-size: 18pt;">
 
-                    <div class="col" align="left">
-                        <ul>
-                            <li>Facilitated by 1D output</li>
+                    <div class="col" align="left" style="margin: auto;">
+                        <ul style="line-height: 2;">
+                            <li>Facilitated by 1D output (new feature)</li>
                             <li>Requires a "track file"</li>
+                            <li>Point to track file in HISTORY.rc</li>
                         </ul>
                     </div>
                     
@@ -103,7 +135,7 @@
 
                     <div class="container" style="margin-bottom: 1em;">
                         <div class="col"  style="font-size:16pt;" align="left">
-                            <h6>GCPy interactive job</h6>
+                            <h6 style="margin-bottom: 0.3em;">GCPy interactive job</h6>
                             <ul>
                                 <li>GEOS-Chem utilities</li>
                                 <li>Quickly visualize output</li>
@@ -113,7 +145,7 @@
                             </ul>
                         </div>
                         <div class="col" align="left">
-                            <pre style="width: 100%; font-size: 12pt;"><code data-trim data-noescape  data-line-numbers="6">
+                            <pre style="width: 600px; font-size: 12pt;"><code data-trim data-noescape  data-line-numbers="6">
                             #!/bin/bash
                             #BSUB -Is
                             #BSUB -n 6
@@ -122,13 +154,13 @@
                             #BSUB -a 'docker(geoschem/gcpy)'
 
                             bash
-                            </code></pre>
+                            </code><span style="font-size: 10pt; font-family: Source Sans Pro, Helvetica, sans-serif;"">This file is: /storage1/fs1/rvmartin/Active/Shared/LB-20201211/gcpy-interactive.bsub</span></pre>
                         </div>
                     </div>
 
                     <div class="container fragment">
                         <div class="col" style="font-size:16pt;" align="left">
-                            <h6>GCHP interactive job</h6>
+                            <h6 style="margin-bottom: 0.3em;">GCHP interactive job</h6>
                             <ul>
                                 <li>Create run directories <ul>
                                     <li><code style="font-size: 12pt;">createRunDir.sh</code></li>
@@ -139,7 +171,7 @@
                             </ul>
                         </div>
                         <div class="col" align="left">
-                            <pre style="width: 100%;  font-size: 12pt;"><code data-trim data-noescape  data-line-numbers="6">
+                            <pre style="width: 600px;  font-size: 12pt;"><code data-trim data-noescape  data-line-numbers="6">
                             #!/bin/bash
                             #BSUB -Is
                             #BSUB -n 12
@@ -148,18 +180,18 @@
                             #BSUB -a 'docker(geoschem/gchp:13.0.0-beta.1-13-g924e47f)'
 
                             bash
-                            </code></pre>
+                            </code><span style="font-size: 10pt; font-family: Source Sans Pro, Helvetica, sans-serif;"">This file is: /storage1/fs1/rvmartin/Active/Shared/LB-20201211/gchp-interactive.bsub</span></pre>
                         </div>
                     </div>
                 </section>
 
                 <section>
                     <h5>New in GCHP 13</h5>
-                    <h2>Documentation on ReadTheDocs</h2>
+                    <h2 style="margin-bottom: 0.5em;">Documentation on ReadTheDocs</h2>
                     <div class="container">
-                        <div class="col" align="left" style="font-size: 12pt;">
+                        <div class="col" align="left" style="font-size: 12pt; margin: auto;">
                             <strong>GCHP</strong>
-                            <ul>
+                            <ul style="margin-bottom: 2em;">
                                 <li><a href="https://gchp.readthedocs.io">https://gchp.readthedocs.io</a></li>
                             </ul>
                             <strong>GCPy</strong>

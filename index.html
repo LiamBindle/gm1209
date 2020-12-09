@@ -8,16 +8,182 @@
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+		<link rel="stylesheet" href="dist/theme/white.css" id="theme">
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
 	</head>
 	<body>
+        <style>
+        .container{
+            display: flex;
+        }
+        .col{
+            flex: 1;
+        }
+        .reveal pre {
+            margin: 0 auto;
+        }
+        .reveal h2 {
+            font-size: 30pt;
+        }
+        .reveal h5 {
+            font-size: 20pt;
+        }
+        </style>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section>What's new in GCHP 13</section>
+                <section>Slide 2</section>
+                <section data-transition="slide-in none-out">
+                    <h5>New in GCHP 13</h5>
+                    <h2>Satellite diagnostics</h2>
+                    <div style="width: 100%;">
+                        <video data-autoplay loop data-background-video-muted src="https://presentation-material.s3.us-east-2.amazonaws.com/satellite_overpass_diagn-s1.webm"></video>
+					</div>
+                </section>
+                <section data-transition="none">
+                    <h5>New in GCHP 13</h5>
+                    <h2>Satellite diagnostics</h2>
+                    <div style="width: 100%;">
+                        <video data-autoplay loop data-background-video-muted src="https://presentation-material.s3.us-east-2.amazonaws.com/satellite_overpass_diagn-s2.webm"></video>
+					</div>
+                </section>
+                <section data-transition="none slide-out">
+                    <h5>New in GCHP 13</h5>
+                    <h2>Satellite diagnostics</h2>
+                    <div style="width: 100%;">
+                        <video data-autoplay loop data-background-video-muted src="https://presentation-material.s3.us-east-2.amazonaws.com/satellite_overpass_diagn-s3.webm"></video>
+					</div>
+                </section>
+                <section data-transition="slide-in">
+                    <h5>New in GCHP 13</h5>
+                    <h2>Satellite diagnostics</h2>
+                    <div class="container">
+
+                    <div class="col" align="left">
+                        <ul>
+                            <li>Facilitated by 1D output</li>
+                            <li>Requires a "track file"</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="col">
+                        <img src="track_file.png" width="100%">
+                    </div>
+                    
+                    </div>
+                </section>
+                <section data-transition="slide-in">
+                    <h5>New in GCHP 13</h5>
+                    <h2>Satellite diagnostics</h2>
+                    <img src="satellite_overpass_flowchart-1.png" style="margin: 0 0;">
+                    <img src="satellite_overpass_flowchart-2.png" style="margin: 0 0;" class="fragment">
+                    <img src="satellite_overpass_flowchart-3.png" style="margin: 0 0;" class="fragment">
+                </section>
+                <section>
+                    <h5>New in GCHP 13</h5>
+                    <h2>Stretched-grids</h2>
+                    <div style="width: 100%;">
+                        <video data-autoplay loop data-background-video-muted src="https://presentation-material.s3.us-east-2.amazonaws.com/stretching.webm"></video>
+					</div>
+                </section>
+                <section data-background-video="https://presentation-material.s3.us-east-2.amazonaws.com/China-D2-MR.webm" data-background-video-loop data-background-video-muted data-background-size="contain">
+                </section>
+                <section data-transition="slide-in">
+                    <h5>New in GCHP 13</h5>
+                    <h2>Stretched-grids</h2>
+                    <img src="stretched_grid_flowchart-1.png" style="margin: 0 0;">
+                    <img src="stretched_grid_flowchart-2.png" style="margin: 0 0;" class="fragment">
+                </section>
+
+                <section>
+                    <h5>New in GCHP 13</h5>
+                    <h2>Always up-to-date containers</h2>
+
+                    <div class="container" style="margin-bottom: 1em;">
+                        <div class="col"  style="font-size:16pt;" align="left">
+                            <h6>GCPy interactive job</h6>
+                            <ul>
+                                <li>GEOS-Chem utilities</li>
+                                <li>Quickly visualize output</li>
+                                <li>Regridding data</li>
+                                <li>Satellite diagn. utils.</li>
+                                <li>Stretched-grid utils.</li>
+                            </ul>
+                        </div>
+                        <div class="col" align="left">
+                            <pre style="width: 100%; font-size: 12pt;"><code data-trim data-noescape  data-line-numbers="6">
+                            #!/bin/bash
+                            #BSUB -Is
+                            #BSUB -n 6
+                            #BSUB -R "rusage[mem=32GB] span[hosts=1]"
+                            #BSUB -q general-interactive
+                            #BSUB -a 'docker(geoschem/gcpy)'
+
+                            bash
+                            </code></pre>
+                        </div>
+                    </div>
+
+                    <div class="container fragment">
+                        <div class="col" style="font-size:16pt;" align="left">
+                            <h6>GCHP interactive job</h6>
+                            <ul>
+                                <li>Create run directories <ul>
+                                    <li><code style="font-size: 12pt;">createRunDir.sh</code></li>
+                                </ul></li>
+                                <li>Run GCHP<ul>
+                                    <li><code style="font-size: 12pt;">mpirun -n 12 gchp</code></li>
+                                </ul></li>
+                            </ul>
+                        </div>
+                        <div class="col" align="left">
+                            <pre style="width: 100%;  font-size: 12pt;"><code data-trim data-noescape  data-line-numbers="6">
+                            #!/bin/bash
+                            #BSUB -Is
+                            #BSUB -n 12
+                            #BSUB -R "rusage[mem=32GB] span[hosts=1]"
+                            #BSUB -q general-interactive
+                            #BSUB -a 'docker(geoschem/gchp:13.0.0-beta.1-13-g924e47f)'
+
+                            bash
+                            </code></pre>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h5>New in GCHP 13</h5>
+                    <h2>Documentation on ReadTheDocs</h2>
+                    <div class="container">
+                        <div class="col" align="left" style="font-size: 12pt;">
+                            <strong>GCHP</strong>
+                            <ul>
+                                <li><a href="https://gchp.readthedocs.io">https://gchp.readthedocs.io</a></li>
+                            </ul>
+                            <strong>GCPy</strong>
+                            <ul>
+                                <li><a href="https://gcpy.readthedocs.io">https://gcpy.readthedocs.io</a></li>
+                            </ul>
+                        </div>
+                        <div class="col" style="flex-grow: 3;">
+                            <iframe style="border:1px solid black;" width=95% height=586 marginheight=0 marginwidth=0 scrolling=yes src="https://gchp.readthedocs.io"></iframe>
+                        </div>
+                    </div>
+                </section>
+				<section>WashU Chemistry Run (WUCR1)</section>
+                <section data-background-video="https://presentation-material.s3.us-east-2.amazonaws.com/wucr1_aod_1.webm" data-background-video-loop data-background-video-muted data-background-size="contain" data-background-color="#0F0E0F">
+                </section>
+                <section>
+                    <h5>WUCR1</h5>
+                    <h2>Run info</h2>
+                </section>
+                    <!-- <h2>Satellite diagnostics</h2>
+                    <div style="width: 100%;">
+                        <video data-autoplay loop data-background-video-muted src="https://presentation-material.s3.us-east-2.amazonaws.com/wucr1_aod_1.webm"></video>
+					</div>
+                </section> -->
 			</div>
 		</div>
 

@@ -26,7 +26,7 @@
         }
         .reveal h2 {
             font-size: 30pt;
-            margin-bottom: 2em;
+            margin-bottom: 1em;
         }
         .reveal h5 {
             font-size: 20pt;
@@ -44,7 +44,7 @@
                         <div class="col" align="left">
                             <h6 style="margin-bottom: 0.1em;">Of interest to the group</h6>
                             <ul style="line-height: 2;">
-                                <li>Erin's CEDS_GBD-MAPS enabled by default</li>
+                                <li>Erin's CEDS_GBD-MAPS "ON" by default</li>
                                 <li>GCHP satellite overpass diagnostics</li>
                                 <li>GCHP stretched-grids</li>
                                 <li>GCPy is a utility</li>
@@ -52,19 +52,27 @@
                             </ul>
                         </div>
                         <div class="col"  align="left">
-                            <h6 style="margin-bottom: 0.1em;">Other noteworthy features</h6>
-                            <ul>
-                                <li>Improved build system</li>
-                                <li>Unit Tester is retired</li>
-                                <li>Updated versioning scheme</li>
-                            </ul>
-                            <h6 style="margin-bottom: 0.1em; margin-top: 1em;">Release info</h6>
-                            <ul>
-                                <li>Ready to be use: 13.0.0-beta.1</li>
-                                <li>Official release: ~January 2021</li>
-                            </ul>
+                            <div class="fragment">
+                                <h6 style="margin-bottom: 0.1em;">Other noteworthy features</h6>
+                                <ul>
+                                    <li>Improved build system</li>
+                                    <li>Improved documentation</li>
+                                    <li>Unit Tester is retired</li>
+                                </ul>
+                            </div>
+                            <div class="fragment">
+                                <h6 style="margin-bottom: 0.1em; margin-top: 1em;">Release info</h6>
+                                <ul>
+                                    <li>Ready to be use: 13.0.0-beta.1</li>
+                                    <li>Official release: ~January 2021</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
+                </section>
+                <section>
+                    <h5>New in GCHP 13</h5>
+                    <h2>Satellite diagnostics</h2>
                 </section>
                 <section data-transition="slide-in none-out">
                     <h5>New in GCHP 13</h5>
@@ -116,11 +124,46 @@
                 <section>
                     <h5>New in GCHP 13</h5>
                     <h2>Stretched-grids</h2>
-                    <div style="width: 100%;">
+                </section>
+                <section data-transition="slide-in none-out">
+                    <h5>New in GCHP 13</h5>
+                    <h2>Stretched-grids</h2>
+                    <div style="height: 500px;;">
+                        <img style="margin: 0;" src="stretch-pre.jpeg">
+					</div>
+                </section>
+                <section data-transition="none-in slide-out">
+                    <h5>New in GCHP 13</h5>
+                    <h2>Stretched-grids</h2>
+                    <div style="height: 500px;">
                         <video data-autoplay loop data-background-video-muted src="https://presentation-material.s3.us-east-2.amazonaws.com/stretching.webm"></video>
 					</div>
                 </section>
                 <section data-background-video="https://presentation-material.s3.us-east-2.amazonaws.com/China-D2-MR.webm" data-background-video-loop data-background-video-muted data-background-size="contain">
+                </section>
+                <section>
+                    <h5>New in GCHP 13</h5>
+                    <h2>Stretched-grids</h2>
+                        <pre style="width: 800px; font-size: 12pt;" class="bash"><code data-trim data-noescape >
+                        #... 
+                        
+                        #------------------------------------------------
+                        #   Internal Cubed Sphere Resolution
+                        #------------------------------------------------
+                        CS_RES=48
+                        STRETCH_GRID=ON
+                        STRETCH_FACTOR=3.0
+                        TARGET_LAT=25.0
+                        TARGET_LON=112.0
+                        # Primary resolution is an integer value
+                        #   24 ~ 4x5, 48 ~ 2x2.25, 90 ~ 1x1.25, 180 ~ 1/2 deg, 360 ~ 1/4 deg
+                        # Set stretched grid to ON or OFF. If ON, follow these rules for parameters:
+                        #    (1) Minimum STRETCH_FACTOR is 1.0001
+                        #    (2) Target lat and lon must be floats (contain decimal)
+                        #    (3) Target lon must be in range [0,360)
+                        
+                        #...
+                    </code><span style="font-size: 12pt; margin: 1em; font-family: Source Sans Pro, Helvetica, sans-serif;"">This is a snippet from runConfig.sh</span></pre>
                 </section>
                 <section data-transition="slide-in">
                     <h5>New in GCHP 13</h5>
@@ -128,7 +171,10 @@
                     <img src="stretched_grid_flowchart-1.png" style="margin: 0 0;">
                     <img src="stretched_grid_flowchart-2.png" style="margin: 0 0;" class="fragment">
                 </section>
-
+                <section>
+                    <h5>New in GCHP 13</h5>
+                    <h2>Always up-to-date containers</h2>
+                </section>
                 <section>
                     <h5>New in GCHP 13</h5>
                     <h2>Always up-to-date containers</h2>
@@ -184,25 +230,22 @@
                         </div>
                     </div>
                 </section>
-
+                <section>
+                    <h5>New in GCHP 13</h5>
+                    <h2>Documentation on ReadTheDocs</h2>
+                </section>
                 <section>
                     <h5>New in GCHP 13</h5>
                     <h2 style="margin-bottom: 0.5em;">Documentation on ReadTheDocs</h2>
-                    <div class="container">
-                        <div class="col" align="left" style="font-size: 12pt; margin: auto;">
-                            <strong>GCHP</strong>
-                            <ul style="margin-bottom: 2em;">
-                                <li><a href="https://gchp.readthedocs.io">https://gchp.readthedocs.io</a></li>
-                            </ul>
-                            <strong>GCPy</strong>
-                            <ul>
-                                <li><a href="https://gcpy.readthedocs.io">https://gcpy.readthedocs.io</a></li>
-                            </ul>
+                    <div class="container" style="font-size: 12pt; margin-bottom: 1em;">
+                        <div class="col">
+                            <strong>GCHP docs</strong> @ <a href="https://gchp.readthedocs.io">https://gchp.readthedocs.io</a>
                         </div>
-                        <div class="col" style="flex-grow: 3;">
-                            <iframe style="border:1px solid black;" width=95% height=586 marginheight=0 marginwidth=0 scrolling=yes src="https://gchp.readthedocs.io"></iframe>
+                        <div class="col">
+                            <strong>GCPy docs</strong> @ <a href="https://gcpy.readthedocs.io">https://gcpy.readthedocs.io</a>
                         </div>
                     </div>
+                    <iframe style="border:1px solid black;" width=95% height=500 marginheight=0 marginwidth=0 scrolling=yes src="https://gchp.readthedocs.io"></iframe>
                 </section>
 				<section>WashU Chemistry Run (WUCR1)</section>
                 <section data-background-video="https://presentation-material.s3.us-east-2.amazonaws.com/wucr1_aod_1.webm" data-background-video-loop data-background-video-muted data-background-size="contain" data-background-color="#0F0E0F">

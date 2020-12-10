@@ -36,12 +36,25 @@
         </style>
 		<div class="reveal">
 			<div class="slides">
-				<section>What's new in GCHP 13</section>
+                <section>
+                    New features in GCHP v13,<br>
+                    and WUCR1
+                    
+                    <div style="font-size: 16pt; margin-top: 2em;">
+                        <span>Liam Bindle</span><br>
+                        <span>Group meeting: 2020-12-11</span>
+                    </div>
+                </section>
+                <section>
+                    <span style="font-size: 16pt;">
+                        You can get this presentation at <a href="https://liambindle.ca/gm1209">https://liambindle.ca/gm1209</a> 
+                    </span>
+                </section>
                 <section>    
                     <h2>New in GCHP 13</h2>
                     
                     <div class="container" style="font-size: 16pt; line-height: 1.6;">
-                        <div class="col" align="left">
+                        <div class="col fragment" align="left">
                             <h6 style="margin-bottom: 0.1em;">Of interest to the group</h6>
                             <ul style="line-height: 2;">
                                 <li>Erin's CEDS_GBD-MAPS "ON" by default</li>
@@ -63,7 +76,7 @@
                             <div class="fragment">
                                 <h6 style="margin-bottom: 0.1em; margin-top: 1em;">Release info</h6>
                                 <ul>
-                                    <li>Ready to be use: 13.0.0-beta.1</li>
+                                    <li>Ready to be used: 13.0.0-beta.1</li>
                                     <li>Official release: ~January 2021</li>
                                 </ul>
                             </div>
@@ -139,7 +152,7 @@
                         <video data-autoplay loop data-background-video-muted src="https://presentation-material.s3.us-east-2.amazonaws.com/stretching.webm"></video>
 					</div>
                 </section>
-                <section data-background-video="https://presentation-material.s3.us-east-2.amazonaws.com/China-D2-MR.webm" data-background-video-loop data-background-video-muted data-background-size="contain">
+                <section data-background-video="https://presentation-material.s3.us-east-2.amazonaws.com/China-D2-MR.webm" data-background-video-loop data-background-video-muted data-background-size="contain" data-background-color="#161516">
                 </section>
                 <section>
                     <h5>New in GCHP 13</h5>
@@ -197,10 +210,10 @@
                             #BSUB -n 6
                             #BSUB -R "rusage[mem=32GB] span[hosts=1]"
                             #BSUB -q general-interactive
-                            #BSUB -a 'docker(geoschem/gcpy)'
+                            #BSUB -a 'docker(geoschem/gcpy:latest)'
 
                             bash
-                            </code><span style="font-size: 10pt; font-family: Source Sans Pro, Helvetica, sans-serif;"">This file is: /storage1/fs1/rvmartin/Active/Shared/LB-20201211/gcpy-interactive.bsub</span></pre>
+                            </code><span style="font-size: 10pt; font-family: Source Sans Pro, Helvetica, sans-serif;"">Copy this file from: /storage1/fs1/rvmartin/Active/Shared/LB-20201211/gcpy-interactive.bsub</span></pre>
                         </div>
                     </div>
 
@@ -226,7 +239,7 @@
                             #BSUB -a 'docker(geoschem/gchp:13.0.0-beta.1-13-g924e47f)'
 
                             bash
-                            </code><span style="font-size: 10pt; font-family: Source Sans Pro, Helvetica, sans-serif;"">This file is: /storage1/fs1/rvmartin/Active/Shared/LB-20201211/gchp-interactive.bsub</span></pre>
+                            </code><span style="font-size: 10pt; font-family: Source Sans Pro, Helvetica, sans-serif;"">Copy this file from: /storage1/fs1/rvmartin/Active/Shared/LB-20201211/gchp-interactive.bsub</span></pre>
                         </div>
                     </div>
                 </section>
@@ -247,12 +260,83 @@
                     </div>
                     <iframe style="border:1px solid black;" width=95% height=500 marginheight=0 marginwidth=0 scrolling=yes src="https://gchp.readthedocs.io"></iframe>
                 </section>
-				<section>WashU Chemistry Run (WUCR1)</section>
+                
+                <section>
+                    <h5>New in GCHP 13</h5>
+                    <h2>Final thoughts</h2>
+
+                    <div style="text-align: center;" class="fragment">
+                        <div style="display: inline-block; text-align: left; font-size: 16pt;">
+                            <!-- <ul>
+                            <li>It's a good time to switch to GCHP</li>
+                            <li>13.0.0-beta.1 is ready</li>
+                            </ul> -->
+                            <h6 style="margin-top: 1em; margin-bottom: 0.5em;">Ideas for getting started</h6>
+                            <ul>
+                                <li>Use the GCHP container 
+                                    <ul>
+                                        <li><span style="font-size: 12pt;">geoschem/gchp:13.0.0-beta.1-13-g924e47f</span></li>
+                                        <li><span style="font-size: 12pt;">Interactive & batch job scripts in "Shared/LB-20201211"</span></li>
+                                    </ul>
+                                </li>
+                                <li>Focus on learning to:
+                                    <ul>
+                                        <li>run directories creation & configuration</li>
+                                        <li>running GCHP</li>
+                                    </ul>
+                                </li>
+                                <li> Read:
+                                    <ul>
+                                        <li><a href="https://gchp.readthedocs.io">https://gchp.readthedocs.io</a>, and</li>
+                                        <li><a href="https://gcpy.readthedocs.io">https://gcpy.readthedocs.io</a></li>
+                                    </ul>
+                                </li>
+                    
+
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section>WashU Chemistry Run (WUCR1)</section>
+                
                 <section data-background-video="https://presentation-material.s3.us-east-2.amazonaws.com/wucr1_aod_1.webm" data-background-video-loop data-background-video-muted data-background-size="contain" data-background-color="#0F0E0F">
                 </section>
                 <section>
                     <h5>WUCR1</h5>
                     <h2>Run info</h2>
+                    <div class="container" style="font-size: 16pt;" align="left">
+                        <div class="col">
+                            <h6 style="margin-top: 1em; margin-bottom: 0.3em;">Setup</h6>
+                            <ul>
+                                <li>Period: June 1, 2018 &mdash;July 1, 2019</li>
+                                <li>Resolution: C360 (~25 km)</li>
+                                <li>Throughput: ~7 days/day</li>
+                            </ul>
+                            <h6 style="margin-top: 2.5em; margin-bottom: 0.3em;">Daily means diagnostics</h6>
+                            <ul>
+                                <li>All tracers</li>
+                                <li>All metfields</li>
+                            </ul>
+                        </div>
+                        <div class="col" align="left">
+                            <h6 style="margin-top: 1em; margin-bottom: 0.3em;">Satellite diagnostics (13:30)</h6>
+                            <ul>
+                                <li>AODs, aerosol masses</li>
+                                <li>NO2, NO, HNO3, R4N2, PAN</li>
+                                <li>CO, SO2, CH2O</li>
+                                <li>Metfields for column calculations</li>
+                            </ul>
+                            <h6 style="margin-top: 1em; margin-bottom: 0.3em;">Animations  diagnostics (15min)</h6>
+                            <ul>
+                                <li>AODs</li>
+                                <li>O3 at 900 hPa</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <section data-background-video="https://presentation-material.s3.us-east-2.amazonaws.com/wucr1_aod_1.webm" data-background-video-loop data-background-video-muted data-background-size="contain" data-background-color="#0F0E0F">
+                    <h2 style="color: black;">Questions?</h2>
                 </section>
                     <!-- <h2>Satellite diagnostics</h2>
                     <div style="width: 100%;">
